@@ -2377,9 +2377,9 @@ int report_cache_stat(int f)
 
 	fsprintf_or_return(f,"\nCache status:\n=============\n");
 	fsprintf_or_return(f,"%ld kB maximum disk cache size.\n",pc);
-	fsprintf_or_return(f,"%ld of %ld bytes (%.3g%%) memory cache used in %ld entries"
+	fsprintf_or_return(f,"%.4g/%.4g Kbytes (%.3g%%) memory cache used in %ld entries"
 			   " (avg %.5g bytes/entry).\n",
-			   csz, mc, (((double)csz)/mc)*100, en,
+			   ((double)csz/1024), ((double)mc/1024), (((double)csz)/mc)*100, en,
 			   ((double)csz)/en);
 	return 0;
 }
